@@ -30,7 +30,7 @@
 # 
 # Good luck!
 #-----------------------------------------------------------------------------
-
+#Note must run from cmd not vs or will not work
 import pygame
 pygame.init()
 Width,Height = 800,800
