@@ -42,4 +42,44 @@
 # Good luck!
 #-----------------------------------------------------------------------------
 
+import pygame
+pygame.init()
+width = 800
+height = 600
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Ransom Note")
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+GREEN = (0, 255, 0)
+YELLOW = (255, 255, 0)
+screen.fill(BLACK)
+
+font1 = pygame.font.SysFont("arial", 40, bold=True)
+font2 = pygame.font.SysFont("courier", 50, italic=True)
+font3 = pygame.font.SysFont("times", 45)
+font4 = pygame.font.SysFont("verdana", 35, bold=True)
+
+text1 = font1.render("YOU ARE", True, RED)
+text2 = font2.render("A BOT", True, BLUE)
+text3 = font3.render("KEEP CODING", True, GREEN)
+text4 = font4.render("AND WATCH D RICHARD VIDEOS", True, YELLOW)
+
+screen.blit(text1, (150, 100))
+screen.blit(text2, (120, 200))
+screen.blit(text3, (100, 320))
+screen.blit(text4, (140, 450))
+
+pygame.display.flip()
+
+
+exit=True
+while exit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit=False
+pygame.quit()
+
 
