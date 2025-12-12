@@ -46,14 +46,27 @@ Flight = pygame.image.load('images/flight.jpeg')
 TripleT= pygame.image.load('images/TripleT.png')
 Lobby = pygame.image.load('images/lobby.jpeg')
 Lobby = pygame.transform.scale(Lobby,(800,600))
-
+TripleTY=250
 running=True
+direction=1
+clock = pygame.time.Clock()
+
 while running:
+    clock.tick(60)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running=False
+    
+    TripleTY += direction
+    if TripleTY >= 300:
+        direction = -1
+    elif TripleTY <= 200:
+        direction = 1
+    
     screen.blit(Lobby,(0,0))
     screen.blit(Flight,(100,300))
-    screen.blit(TripleT,(500,250))
+    screen.blit(TripleT,(500,TripleTY))
     pygame.display.flip()
+
+pygame.quit()
 
