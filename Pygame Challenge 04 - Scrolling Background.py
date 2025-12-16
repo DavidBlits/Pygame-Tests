@@ -31,4 +31,30 @@
 # Good luck!
 #-----------------------------------------------------------------------------
 
+import pygame
+pygame.init()
+screen= pygame.display.set_mode((800, 400))
+clock=pygame.time.Clock()
+scroll=0
+ground_image = pygame.image.load('images/grass.jpeg')
+mountain_image = pygame.image.load('images/mount.jpeg')
+cloud_background = pygame.transform.scale(pygame.image.load('images/cloud.jpeg'),(800,400))
+run = True
+while run:
+    clock.tick(60)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+    scroll-=5  
+    screen.blit(cloud_background,(0,0))
+    bg_x = (scroll * 0.5) % 800 
+    screen.blit(mountain_image, (bg_x - 800, 100))
+    screen.blit(mountain_image, (bg_x, 100))
+
+    fg_x = (scroll * 1) % 800
+    screen.blit(ground_image, (fg_x - 800, 300))
+    screen.blit(ground_image, (fg_x, 300))
+
+    pygame.display.flip()
+
 
