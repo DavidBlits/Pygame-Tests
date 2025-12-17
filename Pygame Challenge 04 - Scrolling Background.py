@@ -45,15 +45,21 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-    scroll-=5  
-    screen.blit(cloud_background,(0,0))
-    bg_x = (scroll * 0.5) % 800 
-    screen.blit(mountain_image, (bg_x - 800, 100))
-    screen.blit(mountain_image, (bg_x, 100))
+    scroll-=5
 
-    fg_x = (scroll * 1) % 800
-    screen.blit(ground_image, (fg_x - 800, 300))
-    screen.blit(ground_image, (fg_x, 300))
+    sky_x=(scroll*0.2) % 800
+    screen.blit(cloud_background,(sky_x-800,0))
+    screen.blit(cloud_background,(sky_x,0))
+
+    cloud_x = (scroll * 0.5) % 800 
+    screen.blit(mountain_image, (cloud_x - 800, 100))
+    screen.blit(mountain_image, (cloud_x, 100))
+
+    ground_x = (scroll * 1) % 800
+    screen.blit(ground_image, (ground_x - 800, 300))
+    screen.blit(ground_image, (ground_x, 300))
+
+    
 
     pygame.display.flip()
 
