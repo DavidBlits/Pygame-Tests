@@ -59,7 +59,7 @@ screen.fill(BLACK)
 
 font1 = pygame.font.SysFont("arial", 40, bold=True)
 font2 = pygame.font.SysFont("courier", 50, italic=True)
-font3 = pygame.font.SysFont("times", 45)
+font3 = pygame.font.SysFont("fonts/NotoSansJP-VariableFont_wght.ttf", 45)
 font4 = pygame.font.SysFont("verdana", 35, bold=True)
 
 text1 = font1.render("YOU ARE", True, RED)

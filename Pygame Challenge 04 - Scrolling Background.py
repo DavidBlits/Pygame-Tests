@@ -55,7 +55,7 @@ while run:
     screen.blit(mountain_image, (cloud_x - 800, 100))
     screen.blit(mountain_image, (cloud_x, 100))
 
-    ground_x = (scroll * 1) % 800
+    ground_x = scroll % 800
     screen.blit(ground_image, (ground_x - 800, 300))
     screen.blit(ground_image, (ground_x, 300))
 
